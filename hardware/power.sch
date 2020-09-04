@@ -4,12 +4,12 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 2
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
-Comment2 ""
+Title "TNG Base USB C"
+Date "2020-09-04"
+Rev "1.1"
+Comp "Tinkerforge GmbH"
+Comment1 "Licensed under CERN OHL v.1.1"
+Comment2 "Copyright (©) 2020, B.Nordmeyer <bastian@tinkerforge.com>"
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -522,7 +522,7 @@ U 1 1 5EFD160A
 P 2600 5500
 F 0 "C208" H 2600 5650 50  0000 L CNN
 F 1 "100pF" V 2750 5450 50  0000 L CNN
-F 2 "C0603F" H 2600 5500 60  0001 C CNN
+F 2 "kicad-libraries:C0402F" H 2600 5500 60  0001 C CNN
 F 3 "" H 2600 5500 60  0000 C CNN
 	1    2600 5500
 	1    0    0    -1  
@@ -670,7 +670,7 @@ U 1 1 5EFEC15E
 P 2250 5500
 F 0 "C205" H 2250 5650 50  0000 L CNN
 F 1 "100nF" V 2400 5450 50  0000 L CNN
-F 2 "C1206" H 2250 5500 60  0001 C CNN
+F 2 "kicad-libraries:C0603F" H 2250 5500 60  0001 C CNN
 F 3 "" H 2250 5500 60  0000 C CNN
 	1    2250 5500
 	1    0    0    -1  

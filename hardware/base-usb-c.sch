@@ -5,11 +5,11 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 1 2
 Title "TNG Base USB C"
-Date "2020-08-25"
+Date "2020-09-04"
 Rev "1.1"
-Comp ""
-Comment1 ""
-Comment2 ""
+Comp "Tinkerforge GmbH"
+Comment1 "Licensed under CERN OHL v.1.1"
+Comment2 "Copyright (©) 2020, B.Nordmeyer <bastian@tinkerforge.com>"
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -2276,7 +2276,7 @@ AR Path="/5DF4E89A/5E1A10D6" Ref="C?"  Part="1"
 AR Path="/5E1A10D6" Ref="C139"  Part="1" 
 F 0 "C139" H 8275 2225 31  0000 L CNN
 F 1 "10uF" H 8275 2075 31  0000 L CNN
-F 2 "C0805" H 8250 2150 60  0001 C CNN
+F 2 "kicad-libraries:C0805E" H 8250 2150 60  0001 C CNN
 F 3 "" H 8250 2150 60  0000 C CNN
 	1    8250 2150
 	-1   0    0    -1  
@@ -3654,4 +3654,6 @@ Connection ~ 8800 10550
 Connection ~ 9050 10850
 Wire Wire Line
 	9050 10850 9050 10750
+Text Notes 12300 1550 0    50   ~ 0
+This documentation describes Open Hardware and is licensed under the\nCERN OHL v. 1.1.\nYou may redistribute and modify this documentation under the terms of the\nCERN OHL v.1.1. (http://ohwr.org/cernohl). This documentation is distributed\nWITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF\nMERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A\nPARTICULAR PURPOSE. Please see the CERN OHL v.1.1 for applicable\nconditions
 $EndSCHEMATC
