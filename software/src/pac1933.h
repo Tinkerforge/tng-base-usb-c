@@ -1,7 +1,7 @@
-/* tng-base-usb-c
+/* tng-hub
  * Copyright (C) 2020 Olaf Lüke <olaf@tinkerforge.com>
  *
- * driver.h: Driver for TBD
+ * pac1933.h: Driver for PAC1933 energy monitor
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -19,19 +19,20 @@
  * Boston, MA 02111-1307, USA.
  */
 
-#ifndef DRIVER_H
-#define DRIVER_H
+#ifndef PAC1933_H
+#define PAC1933_H
+
+#include "configs/config.h"
 
 #include <stdint.h>
-#include <stdbool.h>
 
 typedef struct {
+	I2C_HandleTypeDef i2c;
+} PAC1933;
 
-} Driver;
+extern PAC1933 pac1933;
 
-extern Driver driver;
-
-void driver_tick(void);
-void driver_init(void);
+void pac1933_tick(void);
+void pac1933_init(void);
 
 #endif

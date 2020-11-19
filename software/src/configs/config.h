@@ -22,8 +22,6 @@
 #ifndef CONFIG_GENERAL_H
 #define CONFIG_GENERAL_H
 
-// TODO: CHECK ALL DEFINES!!!
-
 #define TNG_MODULE_NAME "TNG Base USB C"
 #define TNG_DEVICE_IDENTIFIER 207
 
@@ -41,10 +39,11 @@
 #define FIRMWARE_VERSION_MINOR 0
 #define FIRMWARE_VERSION_REVISION 0
 
-#define UARTBB_TX_PIN GPIO_PIN_13
-#define UARTBB_TX_PORTC
+#define UARTBB_TX_PIN GPIO_PIN_0
+#define UARTBB_TX_PORTB
 
 #include "bricklib2/tng/config_stm32f0_128kb.h"
+#include "bricklib2/tng/stm32f0xx_hal_conf.h"
 
 
 

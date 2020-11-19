@@ -1,7 +1,7 @@
-/* tng-base-usb-c
+/* tng-hub
  * Copyright (C) 2020 Olaf Lüke <olaf@tinkerforge.com>
  *
- * main.c: Initialization for TNG Base USB C
+ * config_energy_monitor.h: Configuration PAC193X energy monitor
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -19,27 +19,24 @@
  * Boston, MA 02111-1307, USA.
  */
 
-#include "configs/config.h"
+#ifndef CONFIG_ENERGY_MONITOR_H
+#define CONFIG_ENERGY_MONITOR_H
 
-#include "bricklib2/tng/tng.h"
-#include "bricklib2/logging/logging.h"
+#define PAC193X_ADDRESS      0b00111110
 
-#include "base.h"
-#include "usb2517.h"
-#include "bricklib2/tng/tng_energy_monitor.h"
+#define PAC193X_RCC_CLK      RCC_PERIPHCLK_I2C2
+#define PAC193X_SYS_CLK      RCC_I2C2CLKSOURCE_SYSCLK
 
-int main(void) {
-	logging_init();
-	logd("Start TNG Base USB C\n\r");
+#define PAC193X_SDA_PIN      GPIO_PIN_11
+#define PAC193X_SDA_PORT     GPIOB
+#define PAC193X_SDA_AF       GPIO_AF1_I2C2
+#define PAC193X_SCL_PIN      GPIO_PIN_13
+#define PAC193X_SCL_PORT     GPIOB
+#define PAC193X_SCL_AF       GPIO_AF5_I2C2
 
-	base_init();
-	usb2517_init();
-	tng_energy_monitor_init();
+#define PAC193X_TIMING       0xb0240F13  // 100kHz
+//#define PAC193X_SMB_TIMING       0x50330309  // 400kHz
+#define PAC193X_INSTANCE     I2C2
+#define PAC193X_TIMEOUT      1000
 
-	while(true) {
-		tng_tick();
-		base_tick();
-		usb2517_tick();
-		tng_energy_monitor_tick();
-	}
-}
+#endif

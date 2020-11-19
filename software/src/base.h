@@ -1,7 +1,7 @@
 /* tng-base-usb-c
  * Copyright (C) 2020 Olaf Lüke <olaf@tinkerforge.com>
  *
- * config_driver.h: Configuration for TBD
+ * base.h: Driver for TNG BASE USB C
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -19,7 +19,20 @@
  * Boston, MA 02111-1307, USA.
  */
 
-#ifndef CONFIG_DRIVER_H
-#define CONFIG_DRIVER_H
+#ifndef BASE_H
+#define BASE_H
+
+#include <stdint.h>
+#include <stdbool.h>
+
+typedef struct {
+
+} Base;
+
+extern Base base;
+
+void base_tick(void);
+void base_init(void);
+uint8_t base_get_value(void);
 
 #endif

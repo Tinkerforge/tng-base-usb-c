@@ -19,6 +19,7 @@ ENABLE_LANGUAGE(C ASM)
 
 INCLUDE_DIRECTORIES(
 	"${PROJECT_SOURCE_DIR}/src/"
+	"${PROJECT_SOURCE_DIR}/src/bricklib2/tng/"
 	"${PROJECT_SOURCE_DIR}/src/bricklib2/tng/usb_stm32/"
 	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Drivers/STM32F0xx_HAL_Driver/Inc/"
 	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Drivers/CMSIS/Device/ST/STM32F0xx/Include/"
@@ -30,7 +31,9 @@ INCLUDE_DIRECTORIES(
 SET(SOURCES
 	"${PROJECT_SOURCE_DIR}/src/main.c"
 	"${PROJECT_SOURCE_DIR}/src/communication.c"
-	"${PROJECT_SOURCE_DIR}/src/driver.c"
+	"${PROJECT_SOURCE_DIR}/src/base.c"
+	"${PROJECT_SOURCE_DIR}/src/usb2517.c"
+	"${PROJECT_SOURCE_DIR}/src/bricklib2/tng/tng_energy_monitor.c"
 
 	"${PROJECT_SOURCE_DIR}/src/bricklib2/tng/tng.c"
 	"${PROJECT_SOURCE_DIR}/src/bricklib2/tng/tng_firmware.c"
@@ -56,10 +59,16 @@ SET(SOURCES
 	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c"
 	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c"
 #	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd.c"
-	"${PROJECT_SOURCE_DIR}/src/bricklib2/tng/usb_stm32/stm32f0xx_hal_pcd_fix.c
+	"${PROJECT_SOURCE_DIR}/src/bricklib2/tng/usb_stm32/stm32f0xx_hal_pcd_fix.c"
 	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd_ex.c"
 	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.c"
 	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c"
+	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c"
+	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_smbus.c"
+	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c"
+	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c"
+	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c"
+	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c"
 
 	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c"
 	"${PROJECT_SOURCE_DIR}/src/bricklib2/stm32cubef0/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c"

@@ -1,7 +1,7 @@
 /* tng-base-usb-c
  * Copyright (C) 2020 Olaf Lüke <olaf@tinkerforge.com>
  *
- * driver.c: Driver for TBD
+ * config_base.h: Configuration TNG BASE USB C
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -19,27 +19,17 @@
  * Boston, MA 02111-1307, USA.
  */
 
-#include "driver.h"
+#ifndef CONFIG_BASE_H
+#define CONFIG_BASE_H
 
-#include "configs/config_driver.h"
-#include "bricklib2/os/coop_task.h"
-#include "bricklib2/logging/logging.h"
+#define BASE_LED_DEBUG_PIN      GPIO_PIN_3
+#define BASE_LED_DEBUG_PORT     GPIOA
 
-Driver driver;
-CoopTask driver_task;
+#define BASE_SW_24_CUR_PIN      GPIO_PIN_0
+#define BASE_SW_24_CUR_PORT     GPIOA
+#define BASE_SW_24_ENABLE_PIN   GPIO_PIN_1
+#define BASE_SW_24_ENABLE_PORT  GPIOA
+#define BASE_SW_5_ENABLE_PIN    GPIO_PIN_2
+#define BASE_SW_5_ENABLE_PORT   GPIOB
 
-void driver_task_tick(void) {
-	while(true) {
-		coop_task_sleep_ms(1);
-	}
-}
-
-void driver_init(void) {
-	memset(&driver, 0, sizeof(Driver));
-
-	coop_task_init(&driver_task, driver_task_tick);
-}
-
-void driver_tick(void) {
-	coop_task_tick(&driver_task);
-}
+#endif
